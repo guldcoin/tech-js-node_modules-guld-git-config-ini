@@ -26,5 +26,10 @@
   "license": "MIT",
   "files": [
     "ini.js"
+  ],
+  "readme": "README.md",
+  "homepage": "https://github.com/isysd/tech-js-node_modules-git-config-ini#readme",
+  "keywords": [
+    "guld"
   ]
 }
