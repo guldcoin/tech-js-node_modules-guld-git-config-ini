@@ -27,27 +27,27 @@ function encode (obj, opt) {
     if (val && Array.isArray(val)) {
       if (k === 'pushurl') {
         val.forEach(function (item) {
-          out += '\t' + safe(k) + separator + safe(item) + '\n'
+          out += `\t${safe(k)}${separator}${safe(item)}\n`
         })
       } else {
         val.forEach(function (item) {
-          out += safe(k + '[]') + separator + safe(item) + '\n'
+          out += `${safe(`${k}[]`) + separator + safe(item)}\n`
         })
       }
     } else if (val && typeof val === 'object') {
       children.push(k)
     } else {
-      out += '\t' + safe(k) + separator + safe(val) + eol
+      out += `\t${safe(k)}${separator}${safe(val)}${eol}`
     }
   })
 
   if (opt.section && out.length) {
-    out = '[' + safe(opt.section) + ']' + eol + out
+    out = `[${safe(opt.section)}]${eol}${out}`
   }
 
   children.forEach(function (k, _, __) {
     var nk = dotSplit(k).join('\\.')
-    var section = (opt.section ? opt.section + '.' : '') + nk
+    var section = (opt.section ? `${opt.section}.` : '') + nk
     var child = encode(obj[k], {
       section: section
     })
@@ -166,7 +166,7 @@ function unsafe (val, doUnesc) {
     if (val.charAt(0) === "'") {
       val = val.substr(1, val.length - 2)
     }
-    try { val = JSON.parse(val) } catch (_) {}
+    try { val = JSON.parse(val) } catch (_) {} // eslint-disable-line no-empty
   } else {
     // walk the val to find the first not-escaped ; character
     var esc = false
@@ -177,7 +177,7 @@ function unsafe (val, doUnesc) {
         if ('\\;#'.indexOf(c) !== -1) {
           unesc += c
         } else {
-          unesc += '\\' + c
+          unesc += `\\${c}`
         }
         esc = false
       } else if (';#'.indexOf(c) !== -1) {

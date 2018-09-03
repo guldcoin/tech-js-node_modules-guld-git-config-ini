@@ -1,39 +1,55 @@
 {
   "author": "Nfer Zhuang <nfer.zhuang@gmail.com>",
-  "name": "git-config-ini",
-  "description": "An git config ini encoder/decoder for node",
-<<<<<<< HEAD
-  "version": "2.0.4",
-=======
+  "name": "guld-git-config-ini",
+  "description": "A git config ini encoder/decoder for guld",
   "version": "2.0.6",
->>>>>>> isysd
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nfer/git-config-ini.git"
-  },
   "main": "ini.js",
+  "browser": "ini.min.js",
   "scripts": {
     "pretest": "standard ini.js",
     "test": "tap test/*.js --100 -J",
     "preversion": "npm test",
     "postversion": "npm publish",
-    "postpublish": "git push origin --all; git push origin --tags"
+    "postpublish": "git push origin --all; git push origin --tags",
+    "build": "webpack",
+    "lint": "eslint *.js* test/*.js",
+    "fix": "eslint --fix *.js* test/*.js",
+    "test:lint": "npm run lint && npm run test"
   },
   "engines": {
-    "node": "*"
+    "node": "7"
   },
   "dependencies": {},
   "devDependencies": {
     "standard": "^11.0.1",
-    "tap": "^12.0.1"
+    "tap": "^12.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "eslint": "^4.1.2",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-json": "^1.2.1",
+    "pre-commit": "^1.2.2"
   },
   "license": "MIT",
   "files": [
     "ini.js"
   ],
   "readme": "README.md",
-  "homepage": "https://github.com/isysd/tech-js-node_modules-git-config-ini#readme",
+  "homepage": "https://guld.tech/lib/guld-git-config-ini.html",
+  "repository": "https://bitbucket.org/guld/tech-js-node_modules-guld-git-config-ini",
   "keywords": [
-    "guld"
+    "guld",
+    "node",
+    "browser"
+  ],
+  "pre-commit": [
+    "test:lint"
+  ],
+  "eslintIgnore": [
+    "*.min.js"
   ]
 }
