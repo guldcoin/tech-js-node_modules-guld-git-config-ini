@@ -2,7 +2,7 @@
   "author": "Nfer Zhuang <nfer.zhuang@gmail.com>",
   "name": "guld-git-config-ini",
   "description": "A git config ini encoder/decoder for guld",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "main": "ini.js",
   "browser": "ini.min.js",
   "scripts": {
