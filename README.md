@@ -83,7 +83,6 @@ Encode the object `object` into an ini-style formatted string.
 
 Alias for `encode(object)`
 
-#
 ### License
 
 MIT Copyright Nfer Zhuang <nfer.zhuang@gmail.com>
