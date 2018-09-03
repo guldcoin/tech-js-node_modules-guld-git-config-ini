@@ -1,8 +1,24 @@
-[![Build Status](https://travis-ci.org/nfer/git-config-ini.svg?branch=master)](https://travis-ci.org/nfer/git-config-ini)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# guld-git-config-ini
 
+[![source](https://img.shields.io/badge/source-bitbucket-blue.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-git-config-ini) [![issues](https://img.shields.io/badge/issues-bitbucket-yellow.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-git-config-ini/issues) [![documentation](https://img.shields.io/badge/docs-guld.tech-green.svg)](https://guld.tech/lib/guld-git-config-ini.html)
 
-GIT config ini format parser and serializer for node.
+[![node package manager](https://img.shields.io/npm/v/guld-git-config-ini.svg)](https://www.npmjs.com/package/guld-git-config-ini) [![travis-ci](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-git-config-ini.svg)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-git-config-ini?branch=guld) [![lgtm](https://img.shields.io/lgtm/grade/javascript/b/guld/tech-js-node_modules-guld-git-config-ini.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/b/guld/tech-js-node_modules-guld-git-config-ini/context:javascript) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-guld-git-config-ini/status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-guld-git-config-ini) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-guld-git-config-ini/dev-status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-guld-git-config-ini?type=dev)
+
+A git config ini encoder/decoder for guld
+
+### Install
+
+##### Node
+
+```sh
+npm i guld-git-config-ini
+```
+
+##### Browser
+
+```sh
+curl https///bitbucket.org/guld/tech-js-node_modules-guld-git-config-ini/raw/guld/ini.min.js -o ini.min.js
+```
 
 ## Usage
 
@@ -34,22 +50,6 @@ You can read, manipulate and write the ini-file like so:
 
     fs.writeFileSync('.git/config', ini.stringify(config))
 
-
-### Browser
-
-This script has been bundled for browser use and is available as global var `gitConfigIni`.
-
-```
-<html>
-  <body>
-    <script src="ini.min.js"></script>
-    <script>
-      console.log(gitConfigIni)
-    </script>
-  </body>
-</html>
-```
-
 ## API
 
 ### decode(inistring)
@@ -68,17 +68,7 @@ Encode the object `object` into an ini-style formatted string.
 
 Alias for `encode(object)`
 
-### safe(val)
+### License
 
-Escapes the string `val` such that it is safe to be used as a key or
-value in an ini-file. Basically escapes quotes. For example
+MIT Copyright Nfer Zhuang <nfer.zhuang@gmail.com>
 
-    ini.safe('"unsafe string"')
-
-would result in
-
-    "\"unsafe string\""
-
-### unsafe(val)
-
-Unescapes the string `val`
