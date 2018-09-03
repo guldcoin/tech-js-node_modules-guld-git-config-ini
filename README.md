@@ -20,7 +20,7 @@ npm i guld-git-config-ini
 curl https///bitbucket.org/guld/tech-js-node_modules-guld-git-config-ini/raw/guld/ini.min.js -o ini.min.js
 ```
 
-## Usage
+### Usage
 
 Consider an git config ini-file `.git/config` that looks like this:
 
@@ -50,24 +50,40 @@ You can read, manipulate and write the ini-file like so:
 
     fs.writeFileSync('.git/config', ini.stringify(config))
 
-## API
+#### Browser
 
-### decode(inistring)
+This script has been bundled for browser use and is available as global var `gitConfigIni`.
+
+```
+<html>
+  <body>
+    <script src="ini.min.js"></script>
+    <script>
+      console.log(gitConfigIni)
+    </script>
+  </body>
+</html>
+```
+
+### API
+
+#### decode(inistring)
 
 Decode the ini-style formatted `inistring` into a nested object.
 
-### parse(inistring)
+#### parse(inistring)
 
 Alias for `decode(inistring)`
 
-### encode(object)
+#### encode(object)
 
 Encode the object `object` into an ini-style formatted string.
 
-### stringify(object)
+#### stringify(object)
 
 Alias for `encode(object)`
 
+#
 ### License
 
 MIT Copyright Nfer Zhuang <nfer.zhuang@gmail.com>
