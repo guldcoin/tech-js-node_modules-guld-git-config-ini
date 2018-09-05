@@ -86,4 +86,3 @@ Alias for `encode(object)`
 ### License
 
 MIT Copyright Nfer Zhuang <nfer.zhuang@gmail.com>
-
